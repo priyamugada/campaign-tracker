@@ -43,11 +43,10 @@ app.get("/campaigns", async (req, res) => {
   }
 });
 
-// Serve frontend build for deployment
-app.use(express.static(path.join(__dirname, "frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend/build/index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
 });
 
 // PORT for both local and production
